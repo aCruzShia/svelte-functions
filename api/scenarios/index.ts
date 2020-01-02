@@ -28,7 +28,7 @@ export default (req: NowRequest, res: NowResponse) => {
     const scenariosData = fakeDB.getScenarios()
     // auto refresh data pool
     const isRefresh = !scenariosData.length
-    if (!scenariosData.length) fakeDB.refreshDB()
+    if (isRefresh) fakeDB.refreshDB()
 
     successResponse(res, {
       scenarios: fakeDB.getScenarios(),
