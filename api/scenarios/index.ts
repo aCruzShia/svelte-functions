@@ -45,7 +45,7 @@ export default (req: NowRequest, res: NowResponse) => {
       data: requestPayload,
     })
 
-    const updateTarget = fakeDB.seleteScenario(requestPayload.id)
+    const updateTarget = fakeDB.selectScenario(requestPayload.id)
     if (scenarioValidateError || !updateTarget) {
       badRequestResponse(res, { message: updateTarget ? scenarioValidateError : 'scenario not found' })
       return

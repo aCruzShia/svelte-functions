@@ -22,7 +22,7 @@ const fakeDB = {
     fakeDB.scenarios.push(newScenario)
     return newScenario
   },
-  seleteScenario: (id: number) => fakeDB.scenarios.find((scenario: Scenario) => scenario.id === id),
+  selectScenario: (id: number) => fakeDB.scenarios.find((scenario: Scenario) => scenario.id === id),
   updateScenario: (updatedScenario: Scenario) => {
     let updateIdx = -1
     fakeDB.scenarios.find((scenario: Scenario, idx: number) => {
