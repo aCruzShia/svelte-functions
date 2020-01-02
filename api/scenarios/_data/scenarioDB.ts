@@ -16,6 +16,8 @@ const fakeDB = {
     const newScenario = {
       ...scenario,
       id,
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
     }
     fakeDB.scenarios.push(newScenario)
     return newScenario
@@ -30,7 +32,10 @@ const fakeDB = {
       }
       return false
     })
-    fakeDB.scenarios[updateIdx] = updatedScenario
+    fakeDB.scenarios[updateIdx] = {
+      ...updatedScenario,
+      updated_at: new Date().toISOString(),
+    }
     return fakeDB.scenarios[updateIdx]
   },
   batchDeleteScenario: (ids: number[]) => {
