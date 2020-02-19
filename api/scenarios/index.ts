@@ -9,7 +9,7 @@ export default (req: NowRequest, res: NowResponse) => {
   const { method, query } = req
   setHeaders(res)
 
-  // create scenario
+  // create scenarios
   if (method === 'POST') {
     const scenarioValidateError = isValidScenario({
       data: req.body,
